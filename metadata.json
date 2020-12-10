@@ -1,0 +1,18 @@
+{
+  "name": "Gril258-nebula",
+  "version": "0.0.1",
+  "author": "Martin Krutina",
+  "license": "Apache-2.0",
+  "summary": "A module for a openebula",
+  "source": "https://github.com/Gril258/nebula",
+  "project_page": "https://forge.puppetlabs.com/examplecorp/mymodule",
+  "issues_url": "https://github.com/examplecorp/examplecorp-mymodule/issues",
+  "tags": ["opennebula", "nebula"],
+  "dependencies": [],
+  "operatingsystem_support": [
+    {
+      "operatingsystem":"Debian",
+      "operatingsystemrelease":[ "10" ]
+    }
+   ]
+}
