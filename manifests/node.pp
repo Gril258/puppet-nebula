@@ -14,8 +14,7 @@ class nebula::node (
     tag          => [ 'sshkey-nebula-node' ],
   }
 
-  file { '/var/lib/one/.ssh/known_hosts':
-      ensure => file,
+  File <| title == '/var/lib/one/.ssh/known_hosts' |> {
       owner  => 'oneadmin',
       group  => 'oneadmin',
   }

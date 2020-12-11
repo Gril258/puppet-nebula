@@ -12,6 +12,11 @@ class nebula::frontend (
 ){
 
 
+  File <| name == '/var/lib/one/.ssh/known_hosts' |> {
+      owner  => 'oneadmin',
+      group  => 'oneadmin',
+  }
+
   @@sshkey { "${::fqdn}-nebula":
     type         => ecdsa-sha2-nistp256,
     host_aliases => [ $::ipaddress, $::hostname, $::fqdn ],
