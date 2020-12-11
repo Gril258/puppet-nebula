@@ -12,6 +12,17 @@ class nebula::frontend (
 ){
 
 
+  @@sshkey { "${::fqdn}-nebula":
+    type         => ecdsa-sha2-nistp256,
+    host_aliases => [ $::ipaddress, $::hostname, $::fqdn ],
+    key          => $::sshecdsakey,
+    target       => '/var/lib/one/.ssh/known_hosts',
+    require      => Package['opennebula-node'],
+    tag          => [ 'sshkey-nebula-for-kvm' ],
+  }
+
+  Sshkey <<| tag == 'sshkey-nebula-node'|>>
+
   package { 'opennebula':
     ensure  => installed,
     require => Class['nebula::repo']

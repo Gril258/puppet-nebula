@@ -14,7 +14,8 @@ class nebula::config::oned (
 
   file { $config_path:
       ensure  => file,
-      content => template('nebula/config/oned.conf.erb')
+      content => template('nebula/config/oned.conf.erb'),
+      require => Package['opennebula', 'opennebula-sunstone'],
   }
 
 }
