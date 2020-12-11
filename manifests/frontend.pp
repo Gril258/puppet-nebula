@@ -34,8 +34,8 @@ class nebula::frontend (
 
   file { '/var/lib/one/.one/one_auth':
     ensure  => file,
-    content => "oneadmin:${start_password}"
-    require => Package['opennebula', 'opennebula-sunstone']
+    content => "oneadmin:${start_password}",
+    require => Package['opennebula', 'opennebula-sunstone'],
   }
 
   class { 'nebula::config::oned':
