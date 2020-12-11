@@ -14,6 +14,14 @@ class nebula::node (
     tag          => [ 'sshkey-nebula-node' ],
   }
 
+  file { '/var/lib/one/.ssh/known_hosts':
+      ensure => file,
+      owner  => 'oneadmin',
+      group  => 'oneadmin',
+  }
+
+  Sshkey <<| tag == 'sshkey-nebula-for-kvm'|>>
+
   case $node_type {
     'kvm': {
       package { 'opennebula-node':
