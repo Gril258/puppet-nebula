@@ -52,7 +52,7 @@ class nebula::frontend (
       enable  => true,
       #hasrestart => true,
       #hasstatus  => true,
-      require => Class['nebula::config::oned'], File['/var/lib/one/.one/one_auth']],
+      require => [Class['nebula::config::oned'], File['/var/lib/one/.one/one_auth']],
   }
 
   service { 'opennebula-sunstone':
