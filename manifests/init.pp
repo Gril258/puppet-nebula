@@ -6,7 +6,7 @@ class nebula (
 ) {
 
   class {'nebula::repo':
-    $version => $version,
+    version => $version,
   }
 
 }
