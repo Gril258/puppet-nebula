@@ -1,8 +1,12 @@
 # Class: nebula
 #
 #
-class nebula {
+class nebula (
+  $version = '5.12',
+) {
 
-include nebula::repo
+  class {'nebula::repo':
+    $version => $version,
+  }
 
 }

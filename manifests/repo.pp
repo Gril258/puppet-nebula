@@ -1,14 +1,16 @@
 # Class: nebula::repo
 #
 #
-class nebula::repo {
+class nebula::repo (
+  $version,
+  ) {
 
   case $::operatingsystem {
     'debian': {
       case $::lsbdistcodename {
         'buster': {
           apt::source { 'opennebula':
-            location => 'https://downloads.opennebula.io/repo/5.12/Debian/10',
+            location => "https://downloads.opennebula.io/repo/${version}/Debian/10",
             release  => 'stable',
             repos    => 'opennebula',
             pin      => '600',
@@ -20,7 +22,7 @@ class nebula::repo {
         }
         'stretch': {
           apt::source { 'opennebula':
-            location => 'https://downloads.opennebula.io/repo/5.12/Debian/9',
+            location => "https://downloads.opennebula.io/repo/${version}/Debian/9",
             release  => 'stable',
             repos    => 'opennebula',
             pin      => '600',
