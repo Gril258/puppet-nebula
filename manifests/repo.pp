@@ -8,6 +8,18 @@ class nebula::repo (
   case $::operatingsystem {
     'debian': {
       case $::lsbdistcodename {
+        'bullseye': {
+          apt::source { 'opennebula':
+            location => "https://downloads.opennebula.io/repo/${version}/Debian/11",
+            release  => 'stable',
+            repos    => 'opennebula',
+            pin      => '600',
+            key      => {
+              id     => '92B77188854CF23E1634DA89592F7F0585E16EBF',
+              source => 'https://downloads.opennebula.io/repo/repo.key',
+            },
+          }
+        }
         'buster': {
           apt::source { 'opennebula':
             location => "https://downloads.opennebula.io/repo/${version}/Debian/10",
