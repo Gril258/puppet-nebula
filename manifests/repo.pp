@@ -15,7 +15,7 @@ class nebula::repo (
             repos    => 'opennebula',
             pin      => '600',
             key      => {
-              id     => ' 0B2D385C7C9304B11A0367B905A05927906DC27C',
+              id     => '0B2D385C7C9304B11A0367B905A05927906DC27C',
               source => 'https://downloads.opennebula.io/repo/repo2.key',
             },
           }
@@ -27,7 +27,7 @@ class nebula::repo (
             repos    => 'opennebula',
             pin      => '600',
             key      => {
-              id     => ' 0B2D385C7C9304B11A0367B905A05927906DC27C',
+              id     => '0B2D385C7C9304B11A0367B905A05927906DC27C',
               source => 'https://downloads.opennebula.io/repo/repo2.key',
             },
           }
@@ -39,7 +39,7 @@ class nebula::repo (
             repos    => 'opennebula',
             pin      => '600',
             key      => {
-              id     => ' 0B2D385C7C9304B11A0367B905A05927906DC27C',
+              id     => '0B2D385C7C9304B11A0367B905A05927906DC27C',
               source => 'https://downloads.opennebula.io/repo/repo2.key',
             },
           }
