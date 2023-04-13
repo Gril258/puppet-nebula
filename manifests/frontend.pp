@@ -8,6 +8,9 @@ class nebula::frontend (
     $db_user        = undef,
     $db_password    = undef,
     $db_name        = undef,
+    $default_cpu_cost = '0',
+    $default_memory_cost = '0',
+    $default_disk_cost = '0',
     $start_password = 'nebulastarterpassword',
 ){
 
@@ -55,12 +58,15 @@ class nebula::frontend (
   }
 
   class { 'nebula::config::oned':
-    db_backend  => $db_backend,
-    db_host     => $db_host,
-    db_port     => $db_port,
-    db_user     => $db_user,
-    db_password => $db_password,
-    db_name     => $db_name,
+    db_backend          => $db_backend,
+    db_host             => $db_host,
+    db_port             => $db_port,
+    db_user             => $db_user,
+    db_password         => $db_password,
+    db_name             => $db_name,
+    default_cpu_cost    => $default_cpu_cost,
+    default_memory_cost => $default_memory_cost,
+    default_disk_cost   => $default_disk_cost,
   }
 
   service { 'opennebula':
