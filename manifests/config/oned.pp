@@ -9,6 +9,9 @@ class nebula::config::oned (
     $db_user = undef,
     $db_password = undef,
     $db_name = undef,
+    $default_cpu_cost = '0',
+    $default_memory_cost = '0',
+    $default_disk_cost = '0',
     ) {
 
 
