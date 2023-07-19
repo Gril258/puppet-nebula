@@ -10,7 +10,7 @@ class nebula::repo (
       case $::lsbdistcodename {
         'bookworm': {
           apt::source { 'opennebula':
-            location => "https://downloads.opennebula.io/repo/${version}/Debian/12",
+            location => "https://downloads.opennebula.io/repo/${version}/Debian/11",
             release  => 'stable',
             repos    => 'opennebula',
             pin      => '600',
